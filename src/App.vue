@@ -1,11 +1,24 @@
+<script lang="ts" setup>
+//
+</script>
+
 <template>
-  <v-app>
-    <v-main>
-      <router-view />
-    </v-main>
-  </v-app>
+  <v-layout>
+    <v-container class="main">
+      <main>
+        <router-view />
+      </main>
+      <v-footer>
+        <span class="text-light-green">My Meal Planner</span>
+        &nbsp; - &copy; {{ new Date().getFullYear() }}
+      </v-footer>
+    </v-container>
+  </v-layout>
 </template>
 
-<script lang="ts" setup>
-  //
-</script>
+<style scoped>
+main {
+  margin-top: 20px;
+  min-height: 90vh;
+}
+</style>
