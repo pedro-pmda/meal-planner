@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CalendarCard from "./CalendarCard.vue";
+
 interface Card {
   date: Date;
   content: string;
@@ -16,7 +18,7 @@ const cards: Card[] = [];
     <tbody>
       <tr v-for="card in cards" :key="card.date.toString()">
         <td class="py-4">
-          {{ card.content }}
+          <calendar-card :card="card"></calendar-card>
         </td>
       </tr>
     </tbody>
