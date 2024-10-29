@@ -5,11 +5,11 @@ interface Card {
   date: Date;
 }
 
-interface props {
+interface Props {
   card: Card;
 }
 
-const props = defineProps<props>();
+const props = defineProps<Props>();
 </script>
 
 <template>
