@@ -1,7 +1,7 @@
-<script lang="ts">
-const emits = defineEmits(["openPreview"]);
-
+<script setup lang="ts">
 import type { Recipe } from "@/types/spoonacular";
+
+const emits = defineEmits(["openPreview"]);
 
 interface RecipeList extends Recipe {
   date: Date;
@@ -12,7 +12,7 @@ interface Props {
   title: string;
 }
 
-const props = defineProps<Props>();
+const { recipes, title } = defineProps<Props>();
 
 const openPreview = (recipe: Recipe): void => emits("openPreview", recipe);
 </script>
@@ -29,7 +29,7 @@ const openPreview = (recipe: Recipe): void => emits("openPreview", recipe);
         <td class="py-4">
           <v-sheet class="d-flex justify-space-between">
             <v-sheet class="ma=2 pa=2">
-              <h2 class="text-h4">{{ recipe.title }} }}</h2>
+              <h2 class="text-h4">{{ recipe.title }}</h2>
             </v-sheet>
             <v-sheet class="ma-2 pa-2">
               <v-btn

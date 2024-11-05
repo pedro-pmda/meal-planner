@@ -17,7 +17,7 @@ const addDays = (days: number): Date => {
 const recipes = [
   { id: 1, title: "test1", date: addDays(1) },
   { id: 2, title: "test2", date: addDays(1) },
-  { id: 3, title: "test3", date: addDays(-1) },
+  { id: 3, title: "test3", date: addDays(-5) },
 ];
 
 const openPreview = (recipe: { title: string }): void => {
@@ -52,30 +52,30 @@ onMounted(() => {
   <div v-if="pastRecipes.length === 0 && futureRecipes.length === 0">
     No recipes yet. Add some to your planner!
   </div>
-  <div>
+  <div class="container_recipes">
     <v-tabs v-model="tab" color="deep-purple-accent-4" align-tabs="center">
       <v-tab value="past" :disabled="pastRecipes.length === 0">Past</v-tab>
       <v-tab value="upcoming" :disable="futureRecipes.length == 0"
-        >upcoming</v-tab
+        >Upcoming</v-tab
       >
     </v-tabs>
-    <v-window v-model="tab">
-      <v-windows-item key="past" value="past">
+    <v-tabs-window v-model="tab">
+      <v-tabs-window-item key="past" value="past">
         <RecipeTable
           :recipes="pastRecipes"
           title="Past recipes"
           @openPreview="openPreview"
         >
         </RecipeTable>
-      </v-windows-item>
-      <v-windows-item key="upcoming" value="upcomin">
+      </v-tabs-window-item>
+      <v-tabs-window-item key="upcoming" value="upcoming">
         <RecipeTable
           :recipes="futureRecipes"
           title="Upcoming recipes"
           @openPreview="openPreview"
         >
         </RecipeTable>
-      </v-windows-item>
-    </v-window>
+      </v-tabs-window-item>
+    </v-tabs-window>
   </div>
 </template>

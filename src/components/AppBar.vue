@@ -4,10 +4,10 @@
     <v-menu activator="#hamburger-activator">
       <v-list>
         <v-list-item>
-          <v-btn flat block><router-link to="/">Home</router-link></v-btn>
-          <v-btn flat block
-            ><router-link to="/recipes">Recipes</router-link></v-btn
-          >
+          <v-btn flat block> <app-link to="/" name="Home"></app-link></v-btn>
+          <v-btn flat block>
+            <app-link to="/recipes" name="Recipes"></app-link>
+          </v-btn>
         </v-list-item>
       </v-list>
     </v-menu>
