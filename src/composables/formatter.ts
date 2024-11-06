@@ -8,5 +8,5 @@ export const useFormatDate = (date: Date): string => {
   const day = date.getDate();
   const month = date.toLocaleDateString("default", { month: "long" });
   const ordinal = getOrdinalSuffix(day);
-  return `${day}${ordinal} of ${month}}`;
+  return `${day}${ordinal} of ${month}`;
 };

@@ -1,9 +1,9 @@
+<script setup lang="ts"></script>
+
 <template>
   <div>
-    <h1>MAIN VIEW</h1>
+    <meal-planner></meal-planner>
   </div>
 </template>
-
-<script setup lang="ts"></script>
 
 <style scoped></style>
